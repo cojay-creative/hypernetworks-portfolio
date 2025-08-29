@@ -429,7 +429,24 @@
                 gap: 2rem;
             }
 
-            /* 모바일 네비게이션 개선 */
+
+
+            /* 모바일 햄버거 메뉴 */
+            .mobile-menu-toggle {
+                display: block !important;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #333;
+                padding: 0.5rem;
+            }
+
+            .mobile-menu-toggle:hover {
+                color: #667eea;
+            }
+
+            /* 모바일 메뉴 스타일 개선 */
             nav ul {
                 display: none;
                 position: absolute;
@@ -441,6 +458,7 @@
                 padding: 1rem 0;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
                 gap: 0;
+                z-index: 1001;
             }
 
             nav ul.show {
@@ -464,18 +482,15 @@
                 font-size: 1.1rem;
             }
 
-            /* 모바일 햄버거 메뉴 */
-            .mobile-menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: #333;
-            }
-
-            .mobile-menu-toggle:hover {
-                color: #667eea;
+            /* 감독소개와 스튜디오 메뉴 강조 */
+            nav ul li:nth-child(2) a,
+            nav ul li:nth-child(5) a {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                color: white;
+                margin: 0.5rem 1rem;
+                padding: 0.8rem;
+                border-radius: 10px;
+                font-weight: 600;
             }
 
             .equipment-grid,
@@ -497,6 +512,16 @@
         /* 모바일 메뉴 토글 버튼 (데스크톱에서는 숨김) */
         .mobile-menu-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #667eea;
         }
 
         /* 애니메이션 */
@@ -1436,6 +1461,17 @@
             <h2 class="section-title">프로페셔널 장비 구성</h2>
             <div class="equipment-grid">
                 <div class="equipment-card fade-in">
+                    <h3>영상 디스플레이</h3>
+                    <p><strong>LED월:</strong> 전체 벽면 LED월 (고화소 220인치급)</p>
+                    <p><strong>바닥 LED:</strong> 2m x 2m 인터랙티브 바닥 영상</p>
+                    <div class="equipment-specs">
+                        <p>• 4K 고해상도 지원</p>
+                        <p>• 실시간 영상 처리</p>
+                        <p>• 인터랙티브 기능</p>
+                    </div>
+                </div>
+
+                <div class="equipment-card fade-in">
                     <h3>카메라 시스템</h3>
                     <p><strong>메인카메라:</strong> Sony α7 IV (4K 풀프레임 미러리스) 2대</p>
                     <p><strong>캠코더:</strong> Sony FDR-Z90 (4K 핸디캠) 2대</p>
@@ -1481,6 +1517,57 @@
                         <p>• 실시간 영상 전환</p>
                         <p>• 다채널 송출</p>
                     </div>
+                </div>
+
+                <div class="equipment-card fade-in">
+                    <h3>영상 제작 장비</h3>
+                    <p><strong>렌즈:</strong> 화각별 렌즈 세트 (광각/표준/망원/단렌즈)</p>
+                    <p><strong>전동 슬라이드:</strong> Zhiyun Axis 120 (120cm)</p>
+                    <p><strong>삼각대:</strong> Miliboo 영상용 삼각대 다수</p>
+                    <div class="equipment-specs">
+                        <p>• Sony E마운트 & Canon RF마운트</p>
+                        <p>• 부드러운 카메라 움직임</p>
+                        <p>• 안정적인 촬영</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스튜디오 사진 섹션 -->
+    <section id="studio" class="studio-section">
+        <div class="container">
+            <h2 class="section-title">스튜디오</h2>
+            <div class="studio-slider">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slide">
+                            <img src="studio1.jpg" alt="스튜디오 전경" onerror="this.style.display='none'">
+                        </div>
+                        <div class="slide">
+                            <img src="studio2.jpg" alt="스튜디오 장비" onerror="this.style.display='none'">
+                        </div>
+                        <div class="slide">
+                            <img src="studio3.jpg" alt="스튜디오 작업공간" onerror="this.style.display='none'">
+                        </div>
+                        <div class="slide">
+                            <img src="studio4.jpg" alt="스튜디오 세팅" onerror="this.style.display='none'">
+                        </div>
+                        <div class="slide">
+                            <img src="studio5.jpg" alt="스튜디오 전체" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-btn" onclick="moveSlide(-1)">❮</button>
+                    <button class="next-btn" onclick="moveSlide(1)">❯</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
                 </div>
             </div>
         </div>
@@ -1536,45 +1623,6 @@
                         <div class="contact-icon">⏰</div>
                         <p>업무시간: 평일 09:00 - 18:00</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 스튜디오 사진 섹션 -->
-    <section id="studio" class="studio-section">
-        <div class="container">
-            <h2 class="section-title">스튜디오</h2>
-            <div class="studio-slider">
-                <div class="slider-container">
-                    <div class="slider-track">
-                        <div class="slide">
-                            <img src="studio1.jpg" alt="스튜디오 전경" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio2.jpg" alt="스튜디오 장비" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio3.jpg" alt="스튜디오 작업공간" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio4.jpg" alt="스튜디오 세팅" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio5.jpg" alt="스튜디오 전체" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="prev-btn" onclick="moveSlide(-1)">❮</button>
-                    <button class="next-btn" onclick="moveSlide(1)">❯</button>
-                </div>
-                <div class="slider-dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
                 </div>
             </div>
         </div>
