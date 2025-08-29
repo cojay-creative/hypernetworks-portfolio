@@ -429,14 +429,74 @@
                 gap: 2rem;
             }
 
+            /* 모바일 네비게이션 개선 */
             nav ul {
-                gap: 1rem;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 0.5rem 0;
+                font-size: 1.1rem;
+            }
+
+            /* 모바일 햄버거 메뉴 */
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: #333;
+            }
+
+            .mobile-menu-toggle:hover {
+                color: #667eea;
             }
 
             .equipment-grid,
             .career-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* 모바일에서 로고 크기 조정 */
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            /* 모바일에서 헤더 패딩 조정 */
+            .header-content {
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* 모바일 메뉴 토글 버튼 (데스크톱에서는 숨김) */
+        .mobile-menu-toggle {
+            display: none;
         }
 
         /* 애니메이션 */
@@ -566,8 +626,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">하이퍼네트웍스 스튜디오</div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
                 <nav>
-                    <ul>
+                    <ul id="mobile-menu">
                         <li><a href="#home">홈</a></li>
                         <li><a href="#profile">감독소개</a></li>
                         <li><a href="#career">주요경력</a></li>
@@ -1634,6 +1695,28 @@
         setInterval(() => {
             moveSlide(1);
         }, 5000);
+
+        // 모바일 메뉴 토글 기능
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        }
+
+        // 모바일에서 메뉴 항목 클릭 시 메뉴 닫기
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // 화면 크기 변경 시 모바일 메뉴 상태 초기화
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
