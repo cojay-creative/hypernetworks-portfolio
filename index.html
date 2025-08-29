@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>하이퍼네트웍스 스튜디오 - 김기윤 감독 전문 영상 제작 포트폴리오</title>
+         <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>하이퍼네트웍스 스튜디오 - 김기윤 감독 전문 영상 제작 포트폴리오</title>
+     
+     <!-- SEO 최적화 메타 태그 -->
+     <meta name="description" content="김기윤 감독의 전문적인 영상 제작과 중계송출을 위한 최고급 장비와 노하우. 8년 이상의 경험을 바탕으로 한 고품질 영상 콘텐츠 제작.">
+     <meta name="keywords" content="영상제작, 중계송출, 라이브스트리밍, 영상컨설팅, 하이퍼네트웍스스튜디오, 김기윤">
+     <meta name="author" content="김기윤">
+     
+     <!-- Open Graph 메타 태그 -->
+     <meta property="og:title" content="하이퍼네트웍스 스튜디오 - 김기윤 감독 전문 영상 제작 포트폴리오">
+     <meta property="og:description" content="전문적인 영상 제작과 중계송출을 위한 최고급 장비와 노하우">
+     <meta property="og:type" content="website">
+     <meta property="og:url" content="https://cojay-creative.github.io/hypernetworks-portfolio">
+     <meta property="og:image" content="studio1.jpg">
+     
+     <!-- Twitter Card 메타 태그 -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="하이퍼네트웍스 스튜디오 - 김기윤 감독">
+     <meta name="twitter:description" content="전문적인 영상 제작과 중계송출을 위한 최고급 장비와 노하우">
+     <meta name="twitter:image" content="studio1.jpg">
     <style>
         * {
             margin: 0;
@@ -640,10 +658,63 @@
             background: #667eea;
         }
 
-        .dot:hover {
-            background: #764ba2;
-        }
-    </style>
+                 .dot:hover {
+             background: #764ba2;
+         }
+         
+         /* 로딩 인디케이터 및 플레이스홀더 스타일 */
+         .slide-placeholder,
+         .main-slide-placeholder,
+         .profile-placeholder {
+             background: linear-gradient(135deg, #667eea, #764ba2);
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: white;
+             font-weight: 600;
+             text-align: center;
+             padding: 2rem;
+         }
+         
+         /* 이미지 로딩 애니메이션 */
+         img {
+             transition: opacity 0.3s ease;
+         }
+         
+         img[loading] {
+             opacity: 0;
+         }
+         
+         img[loading].loaded {
+             opacity: 1;
+         }
+         
+         /* 접근성 개선 */
+         .sr-only {
+             position: absolute;
+             width: 1px;
+             height: 1px;
+             padding: 0;
+             margin: -1px;
+             overflow: hidden;
+             clip: rect(0, 0, 0, 0);
+             white-space: nowrap;
+             border: 0;
+         }
+         
+         /* 키보드 네비게이션 개선 */
+         button:focus,
+         a:focus {
+             outline: 2px solid #667eea;
+             outline-offset: 2px;
+         }
+         
+         /* 스크린 리더 지원 */
+         .career-card:focus-within {
+             outline: 2px solid #667eea;
+             outline-offset: 2px;
+         }
+     </style>
 </head>
 <body>
     <!-- 헤더 -->
@@ -672,21 +743,26 @@
         <!-- 메인 배경 슬라이더 -->
         <div class="main-slider">
             <div class="main-slider-track">
-                <div class="main-slide">
-                    <img src="studio1.jpg" alt="스튜디오 전경" onerror="this.style.display='none'">
-                </div>
-                <div class="main-slide">
-                    <img src="studio2.jpg" alt="스튜디오 장비" onerror="this.style.display='none'">
-                </div>
-                <div class="main-slide">
-                    <img src="studio3.jpg" alt="스튜디오 작업공간" onerror="this.style.display='none'">
-                </div>
-                <div class="main-slide">
-                    <img src="studio4.jpg" alt="스튜디오 세팅" onerror="this.style.display='none'">
-                </div>
-                <div class="main-slide">
-                    <img src="studio5.jpg" alt="스튜디오 전체" onerror="this.style.display='none'">
-                </div>
+                                 <div class="main-slide">
+                     <img src="studio1.jpg" alt="스튜디오 전경" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="main-slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">하이퍼네트웍스 스튜디오</div>
+                 </div>
+                 <div class="main-slide">
+                     <img src="studio2.jpg" alt="스튜디오 장비" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="main-slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">전문 영상 제작</div>
+                 </div>
+                 <div class="main-slide">
+                     <img src="studio3.jpg" alt="스튜디오 작업공간" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="main-slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">중계송출 전문</div>
+                 </div>
+                 <div class="main-slide">
+                     <img src="studio4.jpg" alt="스튜디오 세팅" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="main-slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">최고급 장비</div>
+                 </div>
+                 <div class="main-slide">
+                     <img src="studio5.jpg" alt="스튜디오 전체" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="main-slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">김기윤 감독</div>
+                 </div>
             </div>
         </div>
         
@@ -713,7 +789,8 @@
                     <p>표준화되지 않은 라이브 스트리밍 장비와 프로그램들을 다양한 경험과 실험으로 지속적인 연구개발을 하고 있으며, 최신 기술 트렌드에 맞춰 혁신적인 솔루션을 제공합니다.</p>
                 </div>
                 <div class="profile-image fade-in">
-                    <img src="김기윤-0.jpg" alt="김기윤 감독" onerror="this.style.display='none'">
+                                         <img src="김기윤-0.jpg" alt="김기윤 감독" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                     <div class="profile-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:300px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem; border-radius:15px;">김기윤 감독</div>
                 </div>
             </div>
         </div>
@@ -975,174 +1052,39 @@
                         <p>전문적인 공연 촬영 및 영상 제작</p>
                         <span class="career-category">촬영</span>
                     </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 11월 25일</div>
-                        <h4>2024 학교체육진흥포럼 - 중계송출 - 중계송출</h4>
-                        <div class="career-location">📍 포럼장</div>
-                        <p>2024 학교체육진흥포럼 중계송출 작업</p>
-                        <p>학교체육 관련 전문 포럼 중계송출</p>
-                        <span class="career-category">중계송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 11월 18일~22일</div>
-                        <h4>한국환경산업기술원 - ESG 규재대응을 위한 종합과정 중계송출 - 중계송출</h4>
-                        <div class="career-location">📍 한국환경산업기술원</div>
-                        <p>한국환경산업기술원 ESG 규재대응을 위한 종합과정 중계송출 작업</p>
-                        <p>ESG 규재대응 관련 전문 과정 중계송출</p>
-                        <span class="career-category">중계송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 11월 6일</div>
-                        <h4>한국조직은행 - 과학 컨퍼런스 화상회의 송출 - 송출지원</h4>
-                        <div class="career-location">📍 한국조직은행</div>
-                        <p>한국조직은행 과학 컨퍼런스 화상회의 송출지원</p>
-                        <p>과학 컨퍼런스 화상회의 송출지원</p>
-                        <span class="career-category">송출지원</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 10월 14일~16일</div>
-                        <h4>한국습지학회 - 글로벌 세미나 송출 - 송출</h4>
-                        <div class="career-location">📍 한국습지학회</div>
-                        <p>한국습지학회 글로벌 세미나 송출 작업</p>
-                        <p>습지학 관련 글로벌 세미나 송출</p>
-                        <span class="career-category">송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 10월 5일</div>
-                        <h4>성동2차산업혁명체험센터 - 성동미래직업체험축제 중계송출 - 중계송출</h4>
-                        <div class="career-location">📍 성동2차산업혁명체험센터</div>
-                        <p>성동2차산업혁명체험센터 성동미래직업체험축제 중계송출 작업</p>
-                        <p>산업혁명 체험축제 중계송출</p>
-                        <span class="career-category">중계송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 9월 28일</div>
-                        <h4>밴드카이로스 - 공연 촬영 - 촬영</h4>
-                        <div class="career-location">📍 공연장</div>
-                        <p>밴드카이로스 공연 촬영</p>
-                        <p>전문적인 공연 촬영 및 영상 제작</p>
-                        <span class="career-category">촬영</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 9월 25일</div>
-                        <h4>서울창조경제혁신센터 x 르노코리아 - 스타트업 오픈스테이지 화상회의 송출 - 송출</h4>
-                        <div class="career-location">📍 서울창조경제혁신센터</div>
-                        <p>서울창조경제혁신센터 x 르노코리아 스타트업 오픈스테이지 화상회의 송출</p>
-                        <p>스타트업 오픈스테이지 화상회의 송출</p>
-                        <span class="career-category">송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 9월 4일</div>
-                        <h4>법률사무소 한해 - 실시간방송 환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 법률사무소 한해</div>
-                        <p>법률사무소 한해 실시간방송 환경 컨설팅</p>
-                        <p>실시간방송 환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 7월 30일</div>
-                        <h4>워게이밍넷 - 실시간방송 환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 워게이밍넷</div>
-                        <p>워게이밍넷 실시간방송 환경 컨설팅</p>
-                        <p>실시간방송 환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 6월 12일</div>
-                        <h4>세보엠이씨 - 직무별관리자 양성교육 방송환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 세보엠이씨</div>
-                        <p>세보엠이씨 직무별관리자 양성교육 방송환경 컨설팅</p>
-                        <p>직무별관리자 양성교육 방송환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 6월 4일</div>
-                        <h4>카카오뱅크 - 글로벌 화상회의 송출지원 - 송출지원</h4>
-                        <div class="career-location">📍 카카오뱅크</div>
-                        <p>카카오뱅크 글로벌 화상회의 송출지원</p>
-                        <p>글로벌 화상회의 송출지원</p>
-                        <span class="career-category">송출지원</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 5월 30일</div>
-                        <h4>B노선주식회사 - 화상회의 송출지원 - 송출지원</h4>
-                        <div class="career-location">📍 B노선주식회사</div>
-                        <p>B노선주식회사 화상회의 송출지원</p>
-                        <p>화상회의 송출지원</p>
-                        <span class="career-category">송출지원</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 5월 1일~6월</div>
-                        <h4>의왕인생대학 - 영상제작 강의 출강 - 강의</h4>
-                        <div class="career-location">📍 의왕인생대학</div>
-                        <p>의왕인생대학 영상제작 강의 출강</p>
-                        <p>영상제작 강의 출강</p>
-                        <span class="career-category">강의</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 5월 2일</div>
-                        <h4>선엔지니어링 - 팟캐스트 촬영환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 선엔지니어링</div>
-                        <p>선엔지니어링 팟캐스트 촬영환경 컨설팅</p>
-                        <p>팟캐스트 촬영환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 4월 22일~26일</div>
-                        <h4>국가기술표준원 - 글로벌 컨퍼런스 중계송출 - 중계송출</h4>
-                        <div class="career-location">📍 국가기술표준원</div>
-                        <p>국가기술표준원 글로벌 컨퍼런스 중계송출 작업</p>
-                        <p>글로벌 컨퍼런스 중계송출</p>
-                        <span class="career-category">중계송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 4월 13일</div>
-                        <h4>AZ엔터테인먼트 - 허영생 일본콘서트 안내영상 제작 - 영상제작</h4>
-                        <div class="career-location">📍 AZ엔터테인먼트</div>
-                        <p>AZ엔터테인먼트 허영생 일본콘서트 안내영상 제작</p>
-                        <p>허영생 일본콘서트 안내영상 제작</p>
-                        <span class="career-category">영상제작</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 4월 12일</div>
-                        <h4>유튜브 더블비 - 실시간방송 환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 유튜브 더블비</div>
-                        <p>유튜브 더블비 실시간방송 환경 컨설팅</p>
-                        <p>실시간방송 환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 3월 27일</div>
-                        <h4>한국표준협회 - 사내 세미나 중계송출 - 중계송출</h4>
-                        <div class="career-location">📍 한국표준협회</div>
-                        <p>한국표준협회 사내 세미나 중계송출 작업</p>
-                        <p>사내 세미나 중계송출</p>
-                        <span class="career-category">중계송출</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 3월 7일</div>
-                        <h4>그로비교육 - 화상회의 송출지원 - 송출지원</h4>
-                        <div class="career-location">📍 그로비교육</div>
-                        <p>그로비교육 화상회의 송출지원</p>
-                        <p>화상회의 송출지원</p>
-                        <span class="career-category">송출지원</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 2월 28일</div>
-                        <h4>크크삭스 - 라이브커머스 촬영 환경 컨설팅 - 컨설팅</h4>
-                        <div class="career-location">📍 크크삭스</div>
-                        <p>크크삭스 라이브커머스 촬영 환경 컨설팅</p>
-                        <p>라이브커머스 촬영 환경 컨설팅</p>
-                        <span class="career-category">컨설팅</span>
-                    </div>
-                    <div class="career-card fade-in">
-                        <div class="career-date">2024년 1월 25일</div>
-                        <h4>대만 TSE - 한국 부스 원정 촬영 - 촬영</h4>
-                        <div class="career-location">📍 대만 TSE</div>
-                        <p>대만 TSE 한국 부스 원정 촬영</p>
-                        <p>한국 부스 원정 촬영</p>
-                        <span class="career-category">촬영</span>
-                    </div>
+                    
+                                         <div class="career-card fade-in">
+                         <div class="career-date">2024년 3월 27일</div>
+                         <h4>한국표준협회 - 사내 세미나 중계송출</h4>
+                         <div class="career-location">📍 한국표준협회</div>
+                         <p>한국표준협회 사내 세미나 중계송출 작업</p>
+                         <p>사내 세미나 중계송출</p>
+                         <span class="career-category">중계송출</span>
+                     </div>
+                     <div class="career-card fade-in">
+                         <div class="career-date">2024년 3월 7일</div>
+                         <h4>그로비교육 - 화상회의 송출지원</h4>
+                         <div class="career-location">📍 그로비교육</div>
+                         <p>그로비교육 화상회의 송출지원</p>
+                         <p>화상회의 송출지원</p>
+                         <span class="career-category">송출지원</span>
+                     </div>
+                     <div class="career-card fade-in">
+                         <div class="career-date">2024년 2월 28일</div>
+                         <h4>크크삭스 - 라이브커머스 촬영 환경 컨설팅</h4>
+                         <div class="career-location">📍 크크삭스</div>
+                         <p>크크삭스 라이브커머스 촬영 환경 컨설팅</p>
+                         <p>라이브커머스 촬영 환경 컨설팅</p>
+                         <span class="career-category">컨설팅</span>
+                     </div>
+                     <div class="career-card fade-in">
+                         <div class="career-date">2024년 1월 25일</div>
+                         <h4>대만 TSE - 한국 부스 원정 촬영</h4>
+                         <div class="career-location">📍 대만 TSE</div>
+                         <p>대만 TSE 한국 부스 원정 촬영</p>
+                         <p>한국 부스 원정 촬영</p>
+                         <span class="career-category">촬영</span>
+                     </div>
                 </div>
             </div>
 
@@ -1194,7 +1136,7 @@
                         <h4>(주)플레이통 - SEND 홍보영상 및 무빙툰 제작 - 영상제작</h4>
                         <div class="career-location">📍 (주)플레이통</div>
                         <p>무통장 송금 어플리케이션 SEND 홍보영상, 무빙툰 제작 및 프로모션 콘텐츠 제작</p>
-                        <span class="career-category">플레이통</span>
+                        <span class="career-category">영상제작</span>
                     </div>
                     <div class="career-card fade-in">
                         <div class="career-date">2022년 5월 24일</div>
@@ -1458,7 +1400,7 @@
     <!-- 스튜디오 장비 섹션 -->
     <section id="equipment" class="equipment-section">
         <div class="container">
-            <h2 class="section-title">프로페셔널 장비 구성</h2>
+                         <h2 class="section-title">스튜디오 장비 구성</h2>
             <div class="equipment-grid">
                 <div class="equipment-card fade-in">
                     <h3>영상 디스플레이</h3>
@@ -1541,21 +1483,26 @@
             <div class="studio-slider">
                 <div class="slider-container">
                     <div class="slider-track">
-                        <div class="slide">
-                            <img src="studio1.jpg" alt="스튜디오 전경" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio2.jpg" alt="스튜디오 장비" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio3.jpg" alt="스튜디오 작업공간" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio4.jpg" alt="스튜디오 세팅" onerror="this.style.display='none'">
-                        </div>
-                        <div class="slide">
-                            <img src="studio5.jpg" alt="스튜디오 전체" onerror="this.style.display='none'">
-                        </div>
+                                                 <div class="slide">
+                             <img src="studio1.jpg" alt="스튜디오 전경" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <div class="slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem;">스튜디오 전경</div>
+                         </div>
+                         <div class="slide">
+                             <img src="studio2.jpg" alt="스튜디오 장비" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <div class="slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem;">스튜디오 장비</div>
+                         </div>
+                         <div class="slide">
+                             <img src="studio3.jpg" alt="스튜디오 작업공간" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <div class="slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem;">스튜디오 작업공간</div>
+                         </div>
+                         <div class="slide">
+                             <img src="studio4.jpg" alt="스튜디오 세팅" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <div class="slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem;">스튜디오 세팅</div>
+                         </div>
+                         <div class="slide">
+                             <img src="studio5.jpg" alt="스튜디오 전체" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <div class="slide-placeholder" style="display:none; background: linear-gradient(135deg, #667eea, #764ba2); height:100%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem;">스튜디오 전체</div>
+                         </div>
                     </div>
                 </div>
                 <div class="slider-controls">
@@ -1578,10 +1525,10 @@
         <div class="container">
             <h2 class="section-title" style="color: white;">작업 통계</h2>
             <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <h3>38</h3>
-                    <p>주요 프로젝트</p>
-                </div>
+                                 <div class="stat-item fade-in">
+                     <h3>85</h3>
+                     <p>주요 프로젝트</p>
+                 </div>
                 <div class="stat-item fade-in">
                     <h3>8+</h3>
                     <p>연간 경력</p>
@@ -1619,10 +1566,7 @@
                         <div class="contact-icon">📍</div>
                         <p>위치: 서울특별시 강남구 봉은사로 213, 센트럴 타워 지하 1층</p>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">⏰</div>
-                        <p>업무시간: 평일 09:00 - 18:00</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -1758,13 +1702,35 @@
             });
         });
 
-        // 화면 크기 변경 시 모바일 메뉴 상태 초기화
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                const mobileMenu = document.getElementById('mobile-menu');
-                mobileMenu.classList.remove('show');
-            }
-        });
-    </script>
+                 // 화면 크기 변경 시 모바일 메뉴 상태 초기화
+         window.addEventListener('resize', () => {
+             if (window.innerWidth > 768) {
+                 const mobileMenu = document.getElementById('mobile-menu');
+                 mobileMenu.classList.remove('show');
+             }
+         });
+         
+         // 이미지 로딩 완료 처리
+         document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+             img.addEventListener('load', function() {
+                 this.classList.add('loaded');
+             });
+             
+             img.addEventListener('error', function() {
+                 this.style.display = 'none';
+                 const placeholder = this.nextElementSibling;
+                 if (placeholder) {
+                     placeholder.style.display = 'flex';
+                 }
+             });
+         });
+         
+         // 페이지 로드 완료 후 모든 이미지 표시
+         window.addEventListener('load', () => {
+             document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                 img.classList.add('loaded');
+             });
+         });
+     </script>
 </body>
 </html>
